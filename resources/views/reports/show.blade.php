@@ -131,7 +131,7 @@ Add Images to Report
 			 	}
 			 }
 			}
-			var baseUrl = "http://localhost:8000";
+			var baseUrl = "http://54.165.225.152";
 			var handleDropzoneFileUpload = {
 				handleError: function(response){
 					console.log(response);

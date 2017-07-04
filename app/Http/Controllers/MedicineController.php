@@ -24,16 +24,16 @@ class MedicineController extends Controller
     {
         $q = Input::get('q');
         //$medicines = Medicine::all();
-        // $medicines = Medicine::where('name','LIKE',"$q%")->where('user_id','=','1')->orWhere('user_id','=',$id)->get();
+        $medicines = Medicine::where('name','LIKE',"$q%")->where('user_id','=','1')->orWhere('user_id','=',$id)->get();
         // $medicines = Medicine::where(function($query) use ($q,$id){
         //     $query->where('name','LIKE',"$q%")->where('user_id','=','1');
         // })->where('name','LIKE',"$q%")->where('user_id','=',$id)->get();
          
-        $medicines = Medicine::where(function($query) use($q){
-            $query->where('name','LIKE',"$q%")->orWhere('composition','LIKE',"%$q%")->where('user_id','=','1');
-        })->orWhere(function($query) use($q,$id){
-            $query->where('name','LIKE',"$q%")->where('user_id','=',$id);
-        })->get();
+        // $medicines = Medicine::where(function($query) use($q){
+        //     $query->where('name','LIKE',"$q%")->orWhere('composition','LIKE',"%$q%")->where('user_id','=','1');
+        // })->orWhere(function($query) use($q,$id){
+        //     $query->where('name','LIKE',"$q%")->where('user_id','=',$id);
+        // })->get();
 
         foreach ($medicines as $medicine) {
             if ($medicine->composition == '') {

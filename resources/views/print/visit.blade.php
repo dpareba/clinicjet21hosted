@@ -73,7 +73,7 @@
 		{{$visit->nextvisit->format('d/m/Y')}}
 		@endif
 	</div>
-	<img class="cc" src="images/rx.jpg" alt="" style="width: 35px; height: 35px;"><br>
+	<img class="cc" src="/var/www/laravel/public/images/rx.jpg" alt="" style="width: 35px; height: 35px;"><br>
 	@if (count($visit->prescriptions)>0)
 	<table>
 		<thead>
